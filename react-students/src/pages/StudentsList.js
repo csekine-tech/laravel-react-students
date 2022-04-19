@@ -13,7 +13,7 @@ const StudentsList = () =>
     const fetch = async () => {
         const res = await axios.get(`http://127.0.0.1:8000/api/students/`);
         try{
-            console.log(res.data.students);
+            // console.log(res.data.students);
             setStudents(res.data.students);
         }
         catch(e){

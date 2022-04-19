@@ -7,20 +7,11 @@ const Editstudent = () => {
     const {id} = useParams();
     const initialFormState = { id: id, name: '', course: '', email: '', phone: ''};
     const[student, setStudent] = useState(initialFormState);
-    // const[name, setName] = useState('');
-    // const[course, setCourse] = useState('');
-    // const[email, setEmail] = useState('');
-    // const[phone, setPhone] = useState('');
-
 
     useEffect(()=>{
         const fetch = async () => {
             const res = await axios.get(`http://127.0.0.1:8000/api/student/${id}`);
             if(res.data.status === 200){
-                    // setName(res.data.student.name);
-                    // setCourse(res.data.student.course);
-                    // setEmail(res.data.student.email);
-                    // setPhone(res.data.student.phone);
                 setStudent(res.data.student);
             }
         }
